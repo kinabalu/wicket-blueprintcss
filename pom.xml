@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mysticcoders</groupId>
+  <artifactId>blueprintcss-wicket</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>BlueprintCSS Wicket Component</name>
+  <url>http://maven.apache.org</url>
+  <repositories>
+	   <repository>
+		   <id>wicketrad</id>
+		   <url>http://wicket-rad.sourceforge.net/repo</url>
+		   <releases>
+			   <enabled>true</enabled>
+		   </releases>
+		   <snapshots>
+			   <enabled>false</enabled>
+		   </snapshots>
+	   </repository>
+ </repositories>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.wicket</groupId>
+      <artifactId>wicket</artifactId>
+      <version>1.4.16</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>blueprintcss-wicket</finalName>
+	<plugins>
+		<plugin>
+		    <groupId>org.mortbay.jetty</groupId>
+		    <artifactId>maven-jetty-plugin</artifactId>
+			<configuration>
+				<scanIntervalSeconds>5</scanIntervalSeconds>
+			 </configuration>
+		 </plugin>
+
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-compiler-plugin</artifactId>
+		    <configuration>
+		        <source>1.5</source>
+		        <target>1.5</target>
+		    </configuration>
+		</plugin>
+	</plugins>
+	<resources>
+		<resource>
+			<directory>src/main/resources</directory>
+		</resource>
+		<resource>
+			<directory>src/main/java</directory>
+		</resource>
+	</resources>
+
+  </build>
+</project>
